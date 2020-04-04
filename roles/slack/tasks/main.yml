@@ -1,0 +1,6 @@
+---
+- name: Ensure slack is installed
+  snap:
+    name: slack
+    classic: yes
+    state: present

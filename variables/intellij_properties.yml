@@ -1,0 +1,5 @@
+---
+intellij_package_url: https://download-cf.jetbrains.com/idea/ideaIC-2019.3.4.tar.gz
+intellij_package_directory: /tmp/intellij_install_package.tar.gz
+intellij_destination_directory: /opt/
+intellij_script_path: /opt/idea-IC-193.6911.18/bin/idea.sh

@@ -1,0 +1,5 @@
+---
+- name: Ensure snap is installed
+  package:
+    name: snapd
+    state: present

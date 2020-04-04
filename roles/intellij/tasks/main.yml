@@ -1,0 +1,23 @@
+---
+- name: Check if Intellij is installed
+  stat:
+    path: '{{ intellij_script_path }}'
+  register: stat_result
+
+- name: Ensure Intellij package is present
+  get_url:
+    url: '{{ intellij_package_url }}'
+    dest: '{{ intellij_package_directory }}'
+  when: stat_result.stat.exists == False
+
+- name: Ensure Intellij is installed
+  unarchive:
+    src: '{{ intellij_package_directory }}'
+    dest: '{{ intellij_destination_directory }}'
+  when: stat_result.stat.exists == False
+
+- name: Ensure Intellij package is absent
+  file:
+    path: '{{ intellij_package_directory }}'
+    state: absent
+  when: stat_result.stat.exists == False

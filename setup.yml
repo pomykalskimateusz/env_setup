@@ -1,0 +1,9 @@
+---
+  - name: Environment is configured
+    hosts: localhost
+    become: true
+    become_user: root
+    vars_files:
+      - variables/git_properties.yml
+    roles:
+      - role: git
