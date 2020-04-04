@@ -4,6 +4,11 @@
     become: true
     become_user: root
     vars_files:
+      - variables/java_properties.yml
       - variables/git_properties.yml
+      - variables/intellij_properties.yml
     roles:
-      - role: git
+      - java
+      - git
+      - slack
+      - intellij
